@@ -73,6 +73,8 @@ extern NSString *const kSSKeychainWhereKey;
  @return Returns a string containing the password for a given account and service, or `nil` if the Keychain doesn't
  have a password for the given parameters.
  */
++ (NSData *)passwordDataForService:(NSString *)serviceName account:(NSString *)account;
++ (NSData *)passwordDataForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
 + (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account;
 + (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
 
@@ -101,6 +103,8 @@ extern NSString *const kSSKeychainWhereKey;
  
  @return Returns `YES` on success, or `NO` on failure.
  */
++ (BOOL)setPasswordData:(NSData *)passwordData forService:(NSString *)serviceName account:(NSString *)account;
++ (BOOL)setPasswordData:(NSData *)passwordData forService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
 + (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account;
 + (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
 
